@@ -27,7 +27,7 @@ FROM producto;
 
 -- 5. Llista el nom dels productes, el preu en euros i el preu en dòlars estatunidencs (amb un tipus de canvi de 1 € = 1,1 $ i arrodonint el resultat a dues xifres decimals). Utilitza els següents àlies per a les columnes: nom del producte, euros, dòlars.
 SELECT 
-producto.nombre AS nom_del_producte,
+producto.nombre AS nom del producte,
 producto.precio AS euros,
 ROUND(producto.precio * 1.1, 2 ) AS dòlars
 FROM producto;
@@ -60,7 +60,7 @@ FROM producto;
 -- 10. Llista els noms i els preus de tots els productes (precio truncado) de la taula producto, truncant el valor del preu per a mostrar-lo sense cap xifra decimal.
 SELECT
 producto.nombre,
-TRUNCATE(producto.precio, 0) AS precio truncado
+TRUNCATE(producto.precio, 0) AS `precio truncado`
 FROM producto;
 
 -- 11. Mostra una llista amb els codis dels fabricants que apareixen a la taula producto, incloent possibles repeticions.
@@ -101,7 +101,7 @@ LIMIT 5;
 
 -- 17. Retorna una llista amb 2 files a partir de la quarta fila de la taula fabricante. La quarta fila també s'ha d'incloure en la resposta.
 SELECT 
-fabricante.codigo
+fabricante.codigo,
 fabricante.nombre
 FROM fabricante
 LIMIT 2 OFFSET 3;
@@ -133,7 +133,7 @@ WHERE producto.codigo_fabricante = 2;
 SELECT 
 producto.nombre,
 producto.precio,
-fabricante.nombre AS nombre del fabricante
+fabricante.nombre AS `nombre del fabricante`
 FROM producto
 JOIN fabricante ON fabricante.codigo = producto.codigo_fabricante;
 
@@ -141,7 +141,7 @@ JOIN fabricante ON fabricante.codigo = producto.codigo_fabricante;
 SELECT 
 producto.nombre,
 producto.precio,
-fabricante.nombre AS nombre del fabricante
+fabricante.nombre AS `nombre del fabricante`
 FROM producto
 JOIN fabricante ON fabricante.codigo = producto.codigo_fabricante
 ORDER BY producto.nombre ASC;
@@ -150,8 +150,8 @@ ORDER BY producto.nombre ASC;
 SELECT 
 producto.codigo,
 producto.nombre,
-producto.codigo_fabricante AS codigo fabricante,
-fabricante.nombre AS nombre fabricante
+producto.codigo_fabricante AS `codigo fabricante`,
+fabricante.nombre AS `nombre fabricante`
 FROM producto
 JOIN fabricante ON producto.codigo_fabricante = fabricante.codigo;
 
